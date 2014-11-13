@@ -2,22 +2,15 @@ package Email;
 
 import java.io.IOException;
 import java.util.Properties;
-import java.io.*;
-import java.util.*;
 
 import javax.mail.*;
-import javax.mail.Flags.Flag;
 import javax.mail.internet.*;
 
 import ChooseLink.GetLink;
-import ProviderOpen.OpenQassa;
-import UI.MainWindow;
-
-import com.sun.mail.imap.IMAPFolder;
-import com.sun.mail.imap.IMAPMessage;
 
 public class EmailIMAP implements EmailInterface {
 	
+	@SuppressWarnings("static-access")
 	public EmailIMAP(String email, String pw) {
 		this.user = email;
 		this.password = pw;
