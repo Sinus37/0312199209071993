@@ -112,6 +112,7 @@ public class GetLink {
 		
 		switch(scase){
 			case 1: System.out.println("Email erhalten von Provence");
+					@SuppressWarnings("unused")
 					OpenProvanceMailer prov = new OpenProvanceMailer();
 					//prov.open(mail);
 					scase = 0;
