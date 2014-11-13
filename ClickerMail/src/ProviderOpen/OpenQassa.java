@@ -4,7 +4,6 @@ import java.awt.Desktop;
 import java.net.URL;
 import java.util.ArrayList;
 
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
 import Email.EmailIMAP;
 

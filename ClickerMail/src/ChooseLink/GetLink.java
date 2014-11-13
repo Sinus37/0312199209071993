@@ -2,8 +2,6 @@ package ChooseLink;
 
 import java.io.IOException;
 
-import com.sun.xml.internal.bind.v2.TODO;
-
 import ProviderOpen.OpenBonimail;
 import ProviderOpen.OpenBonusEmails;
 import ProviderOpen.OpenCashMails;
@@ -28,7 +26,6 @@ import ProviderOpen.OpenSparMailer;
 import ProviderOpen.OpenUnique;
 import ProviderOpen.OpenXXLpool;
 import ProviderOpen.OpenYbbo;
-import ProviderTest.ProvenceMailerTest;
 
 public class GetLink {
 	
