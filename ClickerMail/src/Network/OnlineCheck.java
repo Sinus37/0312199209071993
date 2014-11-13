@@ -25,7 +25,7 @@ public class OnlineCheck {
 		  */
 		
 		
-		  int timeout = 2000;
+		  int timeout = 2200;
 		  InetAddress[] addresses = null;
 		try {
 			addresses = InetAddress.getAllByName("www.google.de");
