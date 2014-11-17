@@ -2,6 +2,7 @@ package ProviderOpen;
 
 import java.awt.Desktop;
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
 import Email.EmailIMAP;
 
@@ -25,9 +26,16 @@ public class OpenFairpaidmail {
 				System.out.println("Link in Zeile : " + i);
 				System.out.println("Link : " + FairTemp[i]);
 				int startLink = FairTemp[i].indexOf("http:");
-				String b = FairTemp[i].substring(startLink, FairTemp[i].length() );
+				//String b = FairTemp[i].substring(startLink, FairTemp[i].length() );
+				String b = FairTemp[i];
 				System.out.println(b);
 				//i = FairTemp.length -1;
+			try {
+	            TimeUnit.SECONDS.sleep(1);
+	            System.out.println("1 Sek warten");
+	        } catch (InterruptedException e) {
+	            e.printStackTrace();
+	       }
 				openLink(b);
 			}
 	}

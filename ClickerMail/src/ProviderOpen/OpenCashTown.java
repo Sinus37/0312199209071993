@@ -44,7 +44,7 @@ public class OpenCashTown {
 					openLink(b);
 				/**	try {
 			            TimeUnit.SECONDS.sleep(17);
-			            System.out.println("15 Sek warten");
+			            System.out.println("17 Sek warten");
 			        } catch (InterruptedException e) {
 			            e.printStackTrace();
 			       }*/
