@@ -2,6 +2,7 @@ package ChooseLink;
 
 import java.io.IOException;
 
+import ProviderOpen.OpenBoni4You;
 import ProviderOpen.OpenBonimail;
 import ProviderOpen.OpenBonusEmails;
 import ProviderOpen.OpenCashMails;
@@ -9,13 +10,17 @@ import ProviderOpen.OpenCashTown;
 import ProviderOpen.OpenEarnstar;
 import ProviderOpen.OpenEuroearn;
 import ProviderOpen.OpenFairpaidmail;
+import ProviderOpen.OpenGeldboni;
 import ProviderOpen.OpenGongMails;
 import ProviderOpen.OpenInfomails;
+import ProviderOpen.OpenIntermailLive;
+import ProviderOpen.OpenKlickportal24;
 import ProviderOpen.OpenKronenMailer;
 import ProviderOpen.OpenLiveMails;
 import ProviderOpen.OpenLouisMailer;
 import ProviderOpen.OpenMaxMailer;
 import ProviderOpen.OpenMaxearn;
+import ProviderOpen.OpenMoneyMails24;
 import ProviderOpen.OpenPaidportal24;
 import ProviderOpen.OpenProfitmails;
 import ProviderOpen.OpenProvanceMailer;
@@ -108,6 +113,21 @@ public class GetLink {
 		}
 		if (sender.contains("Unique-Mails")){
 			scase = 24;
+		}
+		if (sender.contains("Money-Mails")){
+			scase = 25;
+		}
+		if (sender.contains("Klickportal24")){
+			scase = 26;
+		}
+		if (sender.contains("Boni4you")){
+			scase = 27;
+		}
+		if (sender.contains("Intermail-Live")){
+			scase = 28;
+		}
+		if (sender.contains("Geldboni")){
+			scase = 29;
 		}
 		
 		switch(scase){
@@ -231,7 +251,33 @@ public class GetLink {
 					OpenUnique uni = new OpenUnique();
 					uni.open(mail);
 					scase = 0;
-			break;
+					break;
+			case 25 : System.out.println("Email erhalten von Money-Mails");
+					OpenMoneyMails24 money = new OpenMoneyMails24();
+					money.open(mail);
+					scase = 0;
+					break; 
+			case 26 : System.out.println("Email erhalten von Klickportal24");
+					OpenKlickportal24 klick = new OpenKlickportal24();
+					klick.open(mail);
+					scase = 0;
+					break;
+			case 27 : System.out.println("Email erhalten von Boni4You");
+					OpenBoni4You boni4 = new OpenBoni4You();
+					boni4.open(mail);
+					scase = 0;
+					break;
+			case 28 : System.out.println("Email erhalten von Intermail-Live");
+					OpenIntermailLive inter = new OpenIntermailLive();
+					inter.open(mail);
+					scase = 0;
+					break;
+			case 29 : System.out.println("Email erhalten von Geldboni");
+					OpenGeldboni geld = new OpenGeldboni();
+					geld.open(mail);
+					scase = 0;
+					break;
+
 			default : System.out.println("Kein bekannter Absender");
 		}				
 	}
