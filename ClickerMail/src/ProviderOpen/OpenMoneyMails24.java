@@ -5,44 +5,43 @@ import java.net.URL;
 
 import Email.EmailIMAP;
 
-
-public class OpenUnique {
-
+public class OpenMoneyMails24 {
+	
 	/**
 	 * Anzahl Links				: 1
-	 * Arte des Öffnens			: 
-	 * Wartezeit bis Schließen	: 60 Sek
+	 * Arte des Öffnens			: Link öffnen und Paid -> Button klicken, quest frage
+	 * Wartezeit bis Schließen	: 20-65 Sek
 	 * paid/questionmail    
 	 */
 
-	String[] uniqueTemp;
+	String[] moneyTemp;
 	
 	public void open(String mail){
-		System.out.println("Art der Email : Unique-Mails");
-		uniqueTemp = mail.split("\\n+");
-		System.out.println("Vorhandene Zeilen : " + uniqueTemp.length);
+		System.out.println("Art der Email : Money-Mails");
+		moneyTemp = mail.split("\\n+");
+		System.out.println("Vorhandene Zeilen : " + moneyTemp.length);
 		//System.out.println(mail);
-		for (int i = 0; i < uniqueTemp.length-1; i++) {
-			if (uniqueTemp[i].contains("http://www.unique-mails.de/index.php?mod=paidmai")) {
+		for (int i = 0; i < moneyTemp.length-1; i++) {
+			if (moneyTemp[i].contains("www.money-mails24.de/index.php?mod=paidmail")) {
 				System.out.println("Link in Zeile : " + i);
-				System.out.println("Link : " + uniqueTemp[i]);
-				//int startLink = uniqueTemp[i].indexOf("http:");
-				//int endLink = uniqueTemp[i].indexOf("stan");
+				System.out.println("Link : " + moneyTemp[i]);
+				//int startLink = moneyTemp[i].indexOf("http:");
+				//int endLink = moneyTemp[i].indexOf("stan");
 				//String b = uniqueTemp[i].substring(startLink, endLink + 15 );
-				String b = uniqueTemp[i];
+				String b = moneyTemp[i];
 				System.out.println(b);
-				i = uniqueTemp.length -1;
+				i = moneyTemp.length -1;
 				openPaidLink(b);
 			} else {
-			if (uniqueTemp[i].contains("http://www.unique-mails.de/index.php?mod=questmail")) {
+			if (moneyTemp[i].contains("www.money-mails24.de/index.php?mod=questmail")) {
 				System.out.println("Link in Zeile : " + i);
-				System.out.println("Link : " + uniqueTemp[i]);
-				//int startLink = uniqueTemp[i].indexOf("http:");
-				//int endLink = uniqueTemp[i].indexOf("stan");
+				System.out.println("Link : " + moneyTemp[i]);
+				//int startLink = moneyTemp[i].indexOf("http:");
+				//int endLink = moneyTemp[i].indexOf("stan");
 				//String b = uniqueTemp[i].substring(startLink, endLink + 15 );
-				String b = uniqueTemp[i];
+				String b = moneyTemp[i];
 				System.out.println(b);
-				i = uniqueTemp.length -1;
+				i = moneyTemp.length -1;
 				openQuestionLink(b);
 			} else {
 		//System.out.println("Unbekannte Emailart");
@@ -51,7 +50,7 @@ public class OpenUnique {
 }
 
 	public void openPaidLink (String mail) {
-		System.out.println("Art der EMail : Unique-Mails");
+		System.out.println("Art der EMail : Money-Mails");
 		 try {
 		        Desktop.getDesktop().browse(new URL(mail).toURI());
 		        EmailIMAP.setDeleteMail(true);
@@ -61,7 +60,7 @@ public class OpenUnique {
 	}
 	
 	public void openQuestionLink (String mail) {
-		System.out.println("Art der EMail : Unique-Mails");
+		System.out.println("Art der EMail : Money-Mails");
 		 try {
 		        Desktop.getDesktop().browse(new URL(mail).toURI());
 		        EmailIMAP.setDeleteMail(true);

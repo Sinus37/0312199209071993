@@ -19,7 +19,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
 
-public class StartWindow {
+public class StartWindow{
 
 	private JFrame frmAidoas;
 	private JTextField NameField;
