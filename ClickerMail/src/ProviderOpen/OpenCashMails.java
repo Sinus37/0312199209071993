@@ -10,7 +10,7 @@ public class OpenCashMails {
 	/**
 	 * Anzahl Links				: 1
 	 * Arte des Öffnens			: Link öffnen + bestätigen drücken
-	 * Wartezeit bis Schließen	: 50 Sek (max 5 gleichzeitig)
+	 * Wartezeit bis Schließen	:60 Sek (max 5 gleichzeitig)
 	 */
 
 	String[] cashTemp ;
