@@ -1,8 +1,4 @@
 /bin/
 
 /**/.metadata/
-
-/**/.recommenders/
-
-/*.classpath
-ClickerMail/.classpath
+/**/.recommenders
