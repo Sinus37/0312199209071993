@@ -21,6 +21,7 @@ import ProviderOpen.OpenKlickportal24;
 import ProviderOpen.OpenKronenMailer;
 import ProviderOpen.OpenLiveMails;
 import ProviderOpen.OpenLouisMailer;
+import ProviderOpen.OpenLugrando;
 import ProviderOpen.OpenMaxMailer;
 import ProviderOpen.OpenMaxearn;
 import ProviderOpen.OpenMoneyMails24;
@@ -140,6 +141,9 @@ public class GetLink {
 		}
 		if (sender.contains("boni.tv")){
 			scase = 32;
+		}
+		if (sender.contains("Lugrando.de")){
+			scase = 33;
 		}
 		
 		switch(scase){
@@ -294,17 +298,22 @@ public class GetLink {
 					bonix.open(mail);
 					scase = 0;
 					break;
-			case 31: System.out.println("Email erhalten von Dresden-Mails");
+			case 31 : System.out.println("Email erhalten von Dresden-Mails");
 					OpenDresdenMails dresden = new OpenDresdenMails();
 					dresden.open(mail);
 					scase = 0;
 					break;
-			case 32: System.out.println("Email erhalten von BoniTV");
+			case 32 : System.out.println("Email erhalten von BoniTV");
 					OpenBoniTV tv = new OpenBoniTV();
 					tv.open(mail);
 					scase = 0;
 					break;
-
+			case 33 : System.out.println("Email erhalten von Lugrando");
+					OpenLugrando lug = new OpenLugrando();
+					lug.open(mail);
+					scase = 0;
+					break;
+					
 			default : System.out.println("Kein bekannter Absender");
 		}				
 	}
