@@ -48,11 +48,8 @@ public class OpeneBesucher {
 	
 	public String replace(String LinkTemp){
 		//am=p; und amp; löschen
-		if(LinkTemp.contains("amp;") || LinkTemp.contains("am=p;")){
-			LinkTemp = LinkTemp.replaceAll("amp;", "");
-			LinkTemp = LinkTemp.replaceAll("am=p;", "");
-		}
+		LinkTemp = LinkTemp.replaceAll("amp;", "");
+		LinkTemp = LinkTemp.replaceAll("am=p;", "");
 		return LinkTemp;
-		
 	}
 }
