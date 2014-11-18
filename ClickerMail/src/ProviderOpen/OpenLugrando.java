@@ -5,31 +5,30 @@ import java.net.URL;
 
 import Email.EmailIMAP;
 
-public class OpenBonix {
+public class OpenLugrando {
 
 	/**
 	 * Anzahl Links				: 1
 	 * Arte des Öffnens			: Link öffnen und auf Button klicken
-	 * Wartezeit bis Schließen	: 
+	 * Wartezeit bis Schließen	: 65 Sek
 	 */
 
-	String[] bonixmailTemp ;
+	String[] lugTemp ;
 	
 	public void open(String mail){
 		System.out.println("Art der Email : Bonix");
-		bonixmailTemp = mail.split("\\n+");
-		System.out.println("Vorhandene Zeilen : " + bonixmailTemp.length);
+		lugTemp = mail.split("\\n+");
+		System.out.println("Vorhandene Zeilen : " + lugTemp.length);
 		//System.out.println(mail);
-		for (int i = 0; i < bonixmailTemp.length-1; i++) {
-			if (bonixmailTemp[i].contains("http://www.bonix.org/mail.php")) {
+		for (int i = 0; i < lugTemp.length-1; i++) {
+			if (lugTemp[i].contains("http://www.lugrando.de/mail.php")) {
 				System.out.println("Link in Zeile : " + i);
-				System.out.println("Link : " + bonixmailTemp[i]);
-				int startLink = bonixmailTemp[i].indexOf("http:");
-				int endLink = bonixmailTemp[i].indexOf(" ");
-				//String b = bonixmailTemp[i].substring(startLink, startLink + 59 );
-				String b = bonixmailTemp[i].substring(startLink, bonixmailTemp[i].length() -1 );
+				System.out.println("Link : " + lugTemp[i]);
+				int startLink = lugTemp[i].indexOf("http:");
+				int endLink = lugTemp[i].indexOf("'><b>");
+				String b = lugTemp[i].substring(startLink, endLink );
 				System.out.println(b);
-				i = bonixmailTemp.length -1;
+				i = lugTemp.length -1;
 				openLink(b);
 			}
 	}
@@ -45,6 +44,5 @@ public class OpenBonix {
 		        e.printStackTrace();
 					    }
 	}
-
 	
 }
