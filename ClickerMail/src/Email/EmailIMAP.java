@@ -80,9 +80,7 @@ public class EmailIMAP implements EmailInterface {
 	
 
 	
-    public static void run() throws IOException, NullPointerException, javax.mail.MessagingException {  
-    	String x = "http://www.cash-mails.eu/index.php?mod=questmail&user=104114&uniqueid=7YNCDwb8whnBRzPJ&id=1427337";
-    	System.out.println(x.length());
+    public static void run() throws IOException, NullPointerException, javax.mail.MessagingException {
     	
     	Properties props = System.getProperties();
 		props.setProperty("mail.store.protocol", "imaps");

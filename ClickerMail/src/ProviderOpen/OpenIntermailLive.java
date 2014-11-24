@@ -26,7 +26,7 @@ public class OpenIntermailLive {
 				System.out.println("Link in Zeile : " + i);
 				System.out.println("Link : " + interTemp[i]);
 				int startLink = interTemp[i].indexOf("http:");
-				int endLink = interTemp[i].indexOf(">BestÃ¤tig");
+				int endLink = interTemp[i].indexOf(">Bestätig");
 				String b = interTemp[i].substring(startLink, endLink - 1 );
 				System.out.println(b);
 				i = interTemp.length -1;
@@ -46,7 +46,7 @@ public class OpenIntermailLive {
 		System.out.println("Art der EMail : Intermail-Live");
 		 try {
 		        Desktop.getDesktop().browse(new URL(mail).toURI());
-		        System.out.println("Nachricht erfolgreich geÃ¶ffnet");
+		        System.out.println("Nachricht erfolgreich geöffnet");
 		        EmailIMAP.setDeleteMail(true);
 		    } catch (Exception e) {
 		        e.printStackTrace();

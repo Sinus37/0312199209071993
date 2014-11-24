@@ -130,7 +130,7 @@ public class GetLink {
 		if (sender.contains("Geldboni")){
 			scase = 29;
 		}
-		if (sender.contains("eBesucher")){
+		if (sender.contains("eBesucher.De")){
 			scase = 30;
 		}
 		

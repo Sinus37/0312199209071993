@@ -42,12 +42,12 @@ public class OpenCashTown {
 					System.out.println(b);
 					i = gangTemp.length -1;
 					openLink(b);
-				/**	try {
+					try {
 			            TimeUnit.SECONDS.sleep(17);
 			            System.out.println("17 Sek warten");
 			        } catch (InterruptedException e) {
 			            e.printStackTrace();
-			       }*/
+			       }
 			}
 	} 
 	
