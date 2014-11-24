@@ -38,6 +38,7 @@ import ProviderOpen.OpenUnique;
 import ProviderOpen.OpenWhiteAngelMails;
 import ProviderOpen.OpenXXLpool;
 import ProviderOpen.OpenYbbo;
+import ProviderOpen.OpeneBesucher;
 
 public class GetLink {
 	
@@ -156,6 +157,9 @@ public class GetLink {
 		}
 		if (sender.contains("white-angel-mails")){
 			scase = 36;
+		}
+		if (sender.contains("eBesucher.De")){
+			scase = 37;
 		}
 		
 		switch(scase){
@@ -338,6 +342,11 @@ public class GetLink {
 			case 36 : System.out.println("Email erhalten von White-Angle-Mails");
 					OpenWhiteAngelMails white = new OpenWhiteAngelMails();
 					white.open(mail);
+					scase = 0;
+					break;
+			case 37 : System.out.println("Email erhalten von White-Angle-Mails");
+					OpeneBesucher ebesucher = new OpeneBesucher();
+					ebesucher.open(mail);
 					scase = 0;
 					break;
 					
