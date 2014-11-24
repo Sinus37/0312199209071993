@@ -16,7 +16,7 @@ public class OpenLugrando {
 	String[] lugTemp ;
 	
 	public void open(String mail){
-		System.out.println("Art der Email : Bonix");
+		System.out.println("Art der Email : Lugrando");
 		lugTemp = mail.split("\\n+");
 		System.out.println("Vorhandene Zeilen : " + lugTemp.length);
 		//System.out.println(mail);
@@ -30,12 +30,23 @@ public class OpenLugrando {
 				System.out.println(b);
 				i = lugTemp.length -1;
 				openLink(b);
+			} else {
+				if (lugTemp[i].contains("http://www.lugrando.de/ba_teilnehmen.")) {
+					System.out.println("Link in Zeile : " + i);
+					System.out.println("Link : " + lugTemp[i]);
+					int startLink = lugTemp[i].indexOf("http:");
+					String a = lugTemp[i].substring(startLink, lugTemp[i].length() - 1 );
+					int endLink = a.indexOf(" ");
+					String b = a.substring(0, endLink - 1);
+					System.out.println(b);
+					i = lugTemp.length -1;
+					openLink(b);
+				} 
 			}
 	}
 }
-
 	public void openLink (String mail) {
-		System.out.println("Art der EMail : Bonix");
+		System.out.println("Art der EMail : Lugrando");
 		 try {
 		        Desktop.getDesktop().browse(new URL(mail).toURI());
 		        System.out.println("Nachricht erfolgreich geöffnet");
