@@ -2,22 +2,28 @@ package ChooseLink;
 
 import java.io.IOException;
 
+import ProviderOpen.OpenAtlantisMails;
 import ProviderOpen.OpenBoni4You;
+import ProviderOpen.OpenBoniTV;
 import ProviderOpen.OpenBonimail;
+import ProviderOpen.OpenBonix;
 import ProviderOpen.OpenBonusEmails;
 import ProviderOpen.OpenCashMails;
 import ProviderOpen.OpenCashTown;
+import ProviderOpen.OpenDresdenMails;
 import ProviderOpen.OpenEarnstar;
 import ProviderOpen.OpenEuroearn;
 import ProviderOpen.OpenFairpaidmail;
 import ProviderOpen.OpenGeldboni;
 import ProviderOpen.OpenGongMails;
+import ProviderOpen.OpenIdealShoppen;
 import ProviderOpen.OpenInfomails;
 import ProviderOpen.OpenIntermailLive;
 import ProviderOpen.OpenKlickportal24;
 import ProviderOpen.OpenKronenMailer;
 import ProviderOpen.OpenLiveMails;
 import ProviderOpen.OpenLouisMailer;
+import ProviderOpen.OpenLugrando;
 import ProviderOpen.OpenMaxMailer;
 import ProviderOpen.OpenMaxearn;
 import ProviderOpen.OpenMoneyMails24;
@@ -29,6 +35,7 @@ import ProviderOpen.OpenQuestler;
 import ProviderOpen.OpenReading4Money;
 import ProviderOpen.OpenSparMailer;
 import ProviderOpen.OpenUnique;
+import ProviderOpen.OpenWhiteAngelMails;
 import ProviderOpen.OpenXXLpool;
 import ProviderOpen.OpenYbbo;
 import ProviderOpen.OpeneBesucher;
@@ -42,7 +49,7 @@ public class GetLink {
 	}
 
 	public void setList(String mail, String sender, String kindOf) throws IOException {
-		System.out.println(sender);
+		System.out.println("Sender: " + sender);
 		if(sender.contains("Provence")){
 			 scase = 1;	
 		}
@@ -130,8 +137,29 @@ public class GetLink {
 		if (sender.contains("Geldboni")){
 			scase = 29;
 		}
-		if (sender.contains("eBesucher.De")){
+		if (sender.contains("Bonix")){
 			scase = 30;
+		}
+		if (sender.contains("Dresden-Mails")){
+			scase = 31;
+		}
+		if (sender.contains("boni.tv")){
+			scase = 32;
+		}
+		if (sender.contains("Lugrando.de")){
+			scase = 33;
+		}
+		if (sender.contains("atlantis-mails")){
+			scase = 34;
+		}
+		if (sender.contains("ideal-shoppen")){
+			scase = 35;
+		}
+		if (sender.contains("white-angel-mails")){
+			scase = 36;
+		}
+		if (sender.contains("eBesucher.De")){
+			scase = 37;
 		}
 		
 		switch(scase){
@@ -281,12 +309,47 @@ public class GetLink {
 					geld.open(mail);
 					scase = 0;
 					break;
-			case 30: System.out.println("Email erhalten von eBesucher");
+			case 30 : System.out.println("Email erhalten von Bonix");
+					OpenBonix bonix = new OpenBonix();
+					bonix.open(mail);
+					scase = 0;
+					break;
+			case 31 : System.out.println("Email erhalten von Dresden-Mails");
+					OpenDresdenMails dresden = new OpenDresdenMails();
+					dresden.open(mail);
+					scase = 0;
+					break;
+			case 32 : System.out.println("Email erhalten von BoniTV");
+					OpenBoniTV tv = new OpenBoniTV();
+					tv.open(mail);
+					scase = 0;
+					break;
+			case 33 : System.out.println("Email erhalten von Lugrando");
+					OpenLugrando lug = new OpenLugrando();
+					lug.open(mail);
+					scase = 0;
+					break;
+			case 34 : System.out.println("Email erhalten von Atlantis-Mails");
+					OpenAtlantisMails atlan = new OpenAtlantisMails();
+					atlan.open(mail);
+					scase = 0;
+					break;
+			case 35 : System.out.println("Email erhalten von Ideal-Shoppen");
+					OpenIdealShoppen shop = new OpenIdealShoppen();
+					shop.open(mail);
+					scase = 0;
+					break;
+			case 36 : System.out.println("Email erhalten von White-Angle-Mails");
+					OpenWhiteAngelMails white = new OpenWhiteAngelMails();
+					white.open(mail);
+					scase = 0;
+					break;
+			case 37 : System.out.println("Email erhalten von White-Angle-Mails");
 					OpeneBesucher ebesucher = new OpeneBesucher();
 					ebesucher.open(mail);
 					scase = 0;
 					break;
-
+					
 			default : System.out.println("Kein bekannter Absender");
 		}				
 	}

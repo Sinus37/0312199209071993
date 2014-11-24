@@ -43,7 +43,7 @@ public class OpeneBesucher {
 		System.out.println("Art der EMail : Bonimail");
 		 try {
 		        Desktop.getDesktop().browse(new URL(mail).toURI());
-		        System.out.println("Nachricht erfolgreich geÃ¶ffnet");
+		        System.out.println("Nachricht erfolgreich geöffnet");
 		        EmailIMAP.setDeleteMail(true);
 		    } catch (Exception e) {
 		        e.printStackTrace();
