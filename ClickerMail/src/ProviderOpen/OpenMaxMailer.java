@@ -25,8 +25,9 @@ public class OpenMaxMailer {
 				System.out.println("Link in Zeile : " + i);
 				System.out.println("Link : " + qmaxTemp[i]);
 				int startLink = qmaxTemp[i].indexOf("http:");
-				int endLink = qmaxTemp[i].indexOf("HIER BE");
-				String b = qmaxTemp[i].substring(startLink, endLink - 2 );
+				String a = qmaxTemp[i].substring(startLink, qmaxTemp[i].length() - 1 );
+				int endLink = a.indexOf(">");
+				String b = a.substring(0, endLink - 1);
 				System.out.println(b);
 				i = qmaxTemp.length -1;
 				openLink(b);

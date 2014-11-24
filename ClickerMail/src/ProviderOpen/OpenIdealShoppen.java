@@ -5,7 +5,7 @@ import java.net.URL;
 
 import Email.EmailIMAP;
 
-public class OpenBoniTV {
+public class OpenIdealShoppen {
 
 	/**
 	 * Anzahl Links				: 1
@@ -13,29 +13,29 @@ public class OpenBoniTV {
 	 * Wartezeit bis Schließen	: 
 	 */
 
-	String[] bonimailTemp ;
+	String[] shoppenTemp ;
 	
 	public void open(String mail){
-		System.out.println("Art der Email : BoniTV");
-		bonimailTemp = mail.split("\\n+");
-		System.out.println("Vorhandene Zeilen : " + bonimailTemp.length);
+		System.out.println("Art der Email : Ideal-Shoppen");
+		shoppenTemp = mail.split("\\n+");
+		System.out.println("Vorhandene Zeilen : " + shoppenTemp.length);
 		//System.out.println(mail);
-		for (int i = 0; i < bonimailTemp.length-1; i++) {
-			if (bonimailTemp[i].contains("boni.tv/earn")) {
+		for (int i = 0; i < shoppenTemp.length-1; i++) {
+			if (shoppenTemp[i].contains("http://www.ideal-shoppen.de/cbm.")) {
 				System.out.println("Link in Zeile : " + i);
-				System.out.println("Link : " + bonimailTemp[i]);
-				int startLink = bonimailTemp[i].indexOf("http:");
-				//int endLink = bonimailTemp[i].indexOf("\"");
-				String b = bonimailTemp[i].substring(startLink, bonimailTemp[i].length() - 3 );
+				System.out.println("Link : " + shoppenTemp[i]);
+				int startLink = shoppenTemp[i].indexOf("http:");
+				int endLink = shoppenTemp[i].indexOf("><");
+				String b = shoppenTemp[i].substring(startLink, endLink - 1 );
 				System.out.println(b);
-				i = bonimailTemp.length -1;
+				i = shoppenTemp.length -1;
 				openLink(b);
 			}
 	}
 }
 
 	public void openLink (String mail) {
-		System.out.println("Art der EMail : BoniTV");
+		System.out.println("Art der EMail : Ideal-Shoppen");
 		 try {
 		        Desktop.getDesktop().browse(new URL(mail).toURI());
 		        System.out.println("Nachricht erfolgreich geöffnet");
@@ -44,6 +44,5 @@ public class OpenBoniTV {
 		        e.printStackTrace();
 					    }
 	}
-
 	
 }

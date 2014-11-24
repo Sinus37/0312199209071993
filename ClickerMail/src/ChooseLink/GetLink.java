@@ -2,6 +2,7 @@ package ChooseLink;
 
 import java.io.IOException;
 
+import ProviderOpen.OpenAtlantisMails;
 import ProviderOpen.OpenBoni4You;
 import ProviderOpen.OpenBoniTV;
 import ProviderOpen.OpenBonimail;
@@ -15,6 +16,7 @@ import ProviderOpen.OpenEuroearn;
 import ProviderOpen.OpenFairpaidmail;
 import ProviderOpen.OpenGeldboni;
 import ProviderOpen.OpenGongMails;
+import ProviderOpen.OpenIdealShoppen;
 import ProviderOpen.OpenInfomails;
 import ProviderOpen.OpenIntermailLive;
 import ProviderOpen.OpenKlickportal24;
@@ -33,6 +35,7 @@ import ProviderOpen.OpenQuestler;
 import ProviderOpen.OpenReading4Money;
 import ProviderOpen.OpenSparMailer;
 import ProviderOpen.OpenUnique;
+import ProviderOpen.OpenWhiteAngelMails;
 import ProviderOpen.OpenXXLpool;
 import ProviderOpen.OpenYbbo;
 
@@ -45,7 +48,7 @@ public class GetLink {
 	}
 
 	public void setList(String mail, String sender, String kindOf) throws IOException {
-		System.out.println(sender);
+		System.out.println("Sender: " + sender);
 		if(sender.contains("Provence")){
 			 scase = 1;	
 		}
@@ -144,6 +147,15 @@ public class GetLink {
 		}
 		if (sender.contains("Lugrando.de")){
 			scase = 33;
+		}
+		if (sender.contains("atlantis-mails")){
+			scase = 34;
+		}
+		if (sender.contains("ideal-shoppen")){
+			scase = 35;
+		}
+		if (sender.contains("white-angel-mails")){
+			scase = 36;
 		}
 		
 		switch(scase){
@@ -311,6 +323,21 @@ public class GetLink {
 			case 33 : System.out.println("Email erhalten von Lugrando");
 					OpenLugrando lug = new OpenLugrando();
 					lug.open(mail);
+					scase = 0;
+					break;
+			case 34 : System.out.println("Email erhalten von Atlantis-Mails");
+					OpenAtlantisMails atlan = new OpenAtlantisMails();
+					atlan.open(mail);
+					scase = 0;
+					break;
+			case 35 : System.out.println("Email erhalten von Ideal-Shoppen");
+					OpenIdealShoppen shop = new OpenIdealShoppen();
+					shop.open(mail);
+					scase = 0;
+					break;
+			case 36 : System.out.println("Email erhalten von White-Angle-Mails");
+					OpenWhiteAngelMails white = new OpenWhiteAngelMails();
+					white.open(mail);
 					scase = 0;
 					break;
 					

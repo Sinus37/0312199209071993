@@ -10,7 +10,7 @@ public class OpenDresdenMails {
 	/**
 	 * Anzahl Links				: 1
 	 * Arte des Öffnens			: 
-	 * Wartezeit bis Schließen	: 
+	 * Wartezeit bis Schließen	: 70 Sek
 	 */
 
 	String[] dresdenTemp ;
