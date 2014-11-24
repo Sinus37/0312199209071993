@@ -31,6 +31,7 @@ import ProviderOpen.OpenSparMailer;
 import ProviderOpen.OpenUnique;
 import ProviderOpen.OpenXXLpool;
 import ProviderOpen.OpenYbbo;
+import ProviderOpen.OpeneBesucher;
 
 public class GetLink {
 	
@@ -128,6 +129,9 @@ public class GetLink {
 		}
 		if (sender.contains("Geldboni")){
 			scase = 29;
+		}
+		if (sender.contains("eBesucher")){
+			scase = 30;
 		}
 		
 		switch(scase){
@@ -275,6 +279,11 @@ public class GetLink {
 			case 29 : System.out.println("Email erhalten von Geldboni");
 					OpenGeldboni geld = new OpenGeldboni();
 					geld.open(mail);
+					scase = 0;
+					break;
+			case 30: System.out.println("Email erhalten von eBesucher");
+					OpeneBesucher ebesucher = new OpeneBesucher();
+					ebesucher.open(mail);
 					scase = 0;
 					break;
 
