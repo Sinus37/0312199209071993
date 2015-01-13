@@ -43,8 +43,20 @@ public class OpenDresdenMails {
 					i = dresdenTemp.length -1;
 					openLink(b);
 				}
+			 else {
+				if (dresdenTemp[i].contains("http://www.dresden-mails.de/index.php?mod=bonus")) {
+					System.out.println("Link in Zeile : " + i);
+					System.out.println("Link : " + dresdenTemp[i]);
+					//int startLink = dresdenTemp[i].indexOf("http:");
+					//int endLink = dresdenTemp[i].indexOf(" ");
+					//String b = bonixmailTemp[i].substring(startLink, startLink + 59 );
+					String b = dresdenTemp[i];
+					System.out.println(b);
+					i = dresdenTemp.length -1;
+					openLink(b);
+				}
 			}
-			
+			}
 	}
 }
 

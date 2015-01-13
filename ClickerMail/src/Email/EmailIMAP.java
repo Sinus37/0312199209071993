@@ -111,7 +111,8 @@ public class EmailIMAP implements EmailInterface {
 		GetLink gen = new GetLink();
 		gen.generate();
 		
-        for (int i=0; i < messages.length;i++) {
+        //for (int i=0; i < messages.length;i++) {
+		for (int i=0; i < 60; i++) {
         	Message message =  messages[i];
         	System.out.println("*****************************************************************************");
         	System.out.println("MESSAGE " + (i + 1) + " / " + folder.getMessageCount() + ":");
@@ -165,7 +166,7 @@ public class EmailIMAP implements EmailInterface {
 
 		}
         
-        System.out.println("Erhaltene Emails :");
+        System.out.println("                  Fertig ");
 		} catch (NoSuchProviderException e) {
 		e.printStackTrace();
 		System.exit(1);

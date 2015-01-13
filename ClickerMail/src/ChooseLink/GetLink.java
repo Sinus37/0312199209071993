@@ -2,16 +2,24 @@ package ChooseLink;
 
 import java.io.IOException;
 
+import ProviderOpen.OpenAroundTheMoney;
 import ProviderOpen.OpenAtlantisMails;
 import ProviderOpen.OpenBoni4You;
 import ProviderOpen.OpenBoniTV;
 import ProviderOpen.OpenBonimail;
 import ProviderOpen.OpenBonix;
+import ProviderOpen.OpenBonusBunny;
 import ProviderOpen.OpenBonusEmails;
+import ProviderOpen.OpenCashDevil;
 import ProviderOpen.OpenCashMails;
 import ProviderOpen.OpenCashTown;
+import ProviderOpen.OpenDailyCent;
+import ProviderOpen.OpenDodonaMails;
+import ProviderOpen.OpenDondino;
 import ProviderOpen.OpenDresdenMails;
+import ProviderOpen.OpenDschungel;
 import ProviderOpen.OpenEarnstar;
+import ProviderOpen.OpenEliteMailer;
 import ProviderOpen.OpenEuroearn;
 import ProviderOpen.OpenFairpaidmail;
 import ProviderOpen.OpenGeldboni;
@@ -24,6 +32,7 @@ import ProviderOpen.OpenKronenMailer;
 import ProviderOpen.OpenLiveMails;
 import ProviderOpen.OpenLouisMailer;
 import ProviderOpen.OpenLugrando;
+import ProviderOpen.OpenMailerOne;
 import ProviderOpen.OpenMaxMailer;
 import ProviderOpen.OpenMaxearn;
 import ProviderOpen.OpenMoneyMails24;
@@ -34,8 +43,10 @@ import ProviderOpen.OpenQassa;
 import ProviderOpen.OpenQuestler;
 import ProviderOpen.OpenReading4Money;
 import ProviderOpen.OpenSparMailer;
+import ProviderOpen.OpenStarmailer;
 import ProviderOpen.OpenUnique;
 import ProviderOpen.OpenWhiteAngelMails;
+import ProviderOpen.OpenWiena;
 import ProviderOpen.OpenXXLpool;
 import ProviderOpen.OpenYbbo;
 import ProviderOpen.OpeneBesucher;
@@ -50,7 +61,7 @@ public class GetLink {
 
 	public void setList(String mail, String sender, String kindOf) throws IOException {
 		System.out.println("Sender: " + sender);
-		if(sender.contains("Provence")){
+	  if(sender.contains("Provence")){
 			 scase = 1;	
 		}
 		if(sender.contains("reading")){
@@ -160,6 +171,39 @@ public class GetLink {
 		}
 		if (sender.contains("eBesucher.De")){
 			scase = 37;
+		}
+		if (sender.contains("Elite-Mailer")){
+			scase = 38; 
+		}
+		if (sender.contains("Wiena")){
+			scase = 39;
+		}
+		if (sender.contains("mailer-")){
+			scase = 40;
+		}
+		if (sender.contains("Bonus Bunny")){
+			scase = 41;
+		}
+		if (sender.contains("Dodona-Mails")) {
+			scase = 42;
+		}
+		if (sender.contains("dondino")) {
+			scase = 43;
+		}
+		if (sender.contains("DailyCent")) {
+			scase = 44;
+		}
+		if (sender.contains("cashdevil.de")) {
+			scase = 45;
+		}
+		if (sender.contains("Around-the-Money")) {
+			scase = 46;
+		}
+		if (sender.contains("Starmailer.de")) {
+			scase = 47;
+		}
+		if (sender.contains("Dschungel-Mails.de")) {
+			scase = 48;
 		}
 		
 		switch(scase){
@@ -344,11 +388,67 @@ public class GetLink {
 					white.open(mail);
 					scase = 0;
 					break;
-			case 37 : System.out.println("Email erhalten von White-Angle-Mails");
+			case 37 : System.out.println("Email erhalten von eBesucher");
 					OpeneBesucher ebesucher = new OpeneBesucher();
 					ebesucher.open(mail);
 					scase = 0;
 					break;
+			case 38 : System.out.println("Email erhalten von EliteMailer");
+					OpenEliteMailer elite = new OpenEliteMailer();
+					elite.open(mail);
+					scase = 0;
+					break;
+			case 39 : System.out.println("Email erhalten von Wiena");
+					OpenWiena wiena = new OpenWiena();
+					wiena.open(mail);
+					scase = 0;
+					break;
+			case 40 : System.out.println("Email erhalten von mailer-ONE");
+					OpenMailerOne one = new OpenMailerOne();
+					one.open(mail);
+					scase = 0;
+					break;
+			case 41 : System.out.println("Email erhalten von Bonus Bunny");
+					OpenBonusBunny bunny = new OpenBonusBunny();
+					bunny.open(mail);
+					scase = 0;
+					break;
+			case 42 : System.out.println("Email erhalten von Dodona-Mails");
+					OpenDodonaMails dodona = new OpenDodonaMails();
+					dodona.open(mail, sender);
+					scase = 0;
+					break;
+			case 43 : System.out.println("Email erhalten von Dondino");
+					OpenDondino don = new OpenDondino();
+					don.open(mail);
+					scase = 0;
+					break;
+			case 44 : System.out.println("Email erhalten von DailyCent");
+					OpenDailyCent daily = new OpenDailyCent();
+					daily.open(mail);
+					scase = 0;
+					break;
+			case 45 : System.out.println("Email erhalten von CashDevil");
+					OpenCashDevil devil = new OpenCashDevil();
+					devil.open(mail);
+					scase = 0;
+					break;
+			case 46 : System.out.println("Email erhalten von Around-The-Money");
+					OpenAroundTheMoney around = new OpenAroundTheMoney();
+					around.open(mail);
+					scase = 0;
+					break;
+			case 47 : System.out.println("Email erhalten von Starmailer");
+					OpenStarmailer star = new OpenStarmailer();
+					star.open(mail);
+					scase = 0;
+					break;
+			case 48 : System.out.println("Email erhalten von Dschungel-Mails");
+					OpenDschungel dschungel = new OpenDschungel();
+					dschungel.open(mail);
+					scase = 0;
+					break;
+					
 					
 			default : System.out.println("Kein bekannter Absender");
 		}				

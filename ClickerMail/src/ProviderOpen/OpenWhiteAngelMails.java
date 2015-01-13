@@ -17,7 +17,7 @@ public class OpenWhiteAngelMails {
 	String[] whiteTemp ;
 	
 	public void open(String mail){
-		System.out.println("Art der Email : Qassa");
+		System.out.println("Art der Email : White-Angle-Mails");
 		whiteTemp = mail.split("\\n+");
 		System.out.println("Vorhandene Zeilen : " + whiteTemp.length);
 		//System.out.println(mail);
@@ -36,7 +36,7 @@ public class OpenWhiteAngelMails {
 }
 
 	public void openLink (String mail) {
-		System.out.println("Art der EMail : Bonimail");
+		System.out.println("Art der EMail : White-Angle-Mails");
 		 try {
 		        Desktop.getDesktop().browse(new URL(mail).toURI());
 		        System.out.println("Nachricht erfolgreich geöffnet");
