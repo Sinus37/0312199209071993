@@ -24,7 +24,7 @@ public interface EmailInterface {
 		 * @return true if successful
 		 * @throws MessagingException 
 		 */
-		public boolean login(String user, String pwd) throws MessagingException;
+		public int login(String user, String pwd) throws MessagingException;
 		
 		/**
 		 * Logs out and finalizes the session. Last method called.	

@@ -13,6 +13,8 @@ import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class RegisterWindow extends JFrame {
 
@@ -55,7 +57,8 @@ public class RegisterWindow extends JFrame {
 	 * Create the frame.
 	 */
 	public RegisterWindow() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		AGBWindow agbWin = new AGBWindow();
+		//setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 268, 339);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -105,7 +108,7 @@ public class RegisterWindow extends JFrame {
 		
 		JButton btnNewButton = new JButton("Registrieren");
 		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent e) {				
 				/**
 				 * Passwort erstellen und auf Gleichheit prüfen
 				 * Passwortkriterien:
@@ -117,6 +120,7 @@ public class RegisterWindow extends JFrame {
 					System.out.println("Die Passwörter stimmen überein.");
 					System.out.println("Das Passwort ist : " + userPasswort);
 					passwortIsEqual = true;
+					setUserPasswort(userPasswort);
 				} else {
 					System.out.println("Die Passwörter stimmen nicht überein");
 				}
@@ -130,6 +134,7 @@ public class RegisterWindow extends JFrame {
 					System.out.println("Die Usernamen stimmen überein.");
 					System.out.println("Der Username ist : " + userEmail);
 					userIsEqual = true;
+					setUserEmail(userEmail);
 				} else {
 					System.out.println("Die Usernamen stimmen nicht überein");
 				}
@@ -139,6 +144,8 @@ public class RegisterWindow extends JFrame {
 				 * Akzeptanz der Bedingungen testen
 				 */
 				if (checkFeld.isSelected()) {
+					agbIsAccepted = agbWin.isAgbsAreRead();
+					System.out.println(agbIsAccepted);
 					System.out.println("AGBs akzeptiert");
 					agbIsAccepted = true;
 				} else {
@@ -153,8 +160,30 @@ public class RegisterWindow extends JFrame {
 		contentPane.add(btnNewButton);
 		
 		JLabel lblAgbs = new JLabel("AGBs");
+		lblAgbs.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				agbWin.setVisible(true);
+			}
+		});
 		lblAgbs.setFont(new Font("Lucida Grande", Font.PLAIN, 9));
 		lblAgbs.setBounds(234, 6, 28, 16);
 		contentPane.add(lblAgbs);
+	}
+
+	public String getUserPasswort() {
+		return userPasswort;
+	}
+
+	public void setUserPasswort(String userPasswort) {
+		this.userPasswort = userPasswort;
+	}
+
+	public String getUserEmail() {
+		return userEmail;
+	}
+
+	public void setUserEmail(String userEmail) {
+		this.userEmail = userEmail;
 	}
 }

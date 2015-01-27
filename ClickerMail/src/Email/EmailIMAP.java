@@ -36,53 +36,16 @@ public class EmailIMAP implements EmailInterface {
 	public static String from2;
 	static boolean deleteMail = false;
 	public static int sumMails;
+	int anzahl;
 	
 	public static void main(String[] args)  throws IOException, MessagingException, NullPointerException, javax.mail.MessagingException {
 		setUser("cfmap14@googlemail.com");
 		setPassword("ClickMailer1!");
 		run();
 	}
-	
-	@Override
-	public boolean login(String user, String pwd) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean logout() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public String getEmail(int index) throws IOException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public static String getUser() {
-		return user;
-	}
-
-	public static void setUser(String user) {
-		EmailIMAP.user = user;
-	}
-
-	public static String getPassword() {
-		return password;
-	}
-
-	public static void setPassword(String password) {
-		EmailIMAP.password = password;
-	}
-	
-	
 
 	
     public static void run() throws IOException, NullPointerException, javax.mail.MessagingException {  
-    	String x = "http://www.cash-mails.eu/index.php?mod=questmail&user=104114&uniqueid=7YNCDwb8whnBRzPJ&id=1427337";
-    	System.out.println(x.length());
     	
     	Properties props = System.getProperties();
 		props.setProperty("mail.store.protocol", "imaps");
@@ -193,6 +156,74 @@ public class EmailIMAP implements EmailInterface {
 		System.out.println(deleteMail);
 	}
 
+	@Override
+	public int login(String user, String pwd) throws MessagingException {
+		Properties props = System.getProperties();
+		props.setProperty("mail.store.protocol", "imaps");
+	
+		Session session = Session.getDefaultInstance(props, null);
+	// Login 
+		Store store;
+		try {
+			store = session.getStore("imaps");
+		
+		store.connect( host, user, password);
+		System.out.println("Erfolgreich eingelogt");
 
+
+	//choose the folder
+		Folder folder = store.getFolder("Inbox");
+		folder.open(Folder.READ_WRITE);
+		
+		/**Folder[] f = store.getDefaultFolder().list();
+		for(Folder fd:f)
+		    System.out.println(">> "+fd.getName());
+		*/
+		
+		Message messages[] = folder.getMessages();
+
+		anzahl = folder.getMessageCount();
+		System.out.println("No of Messages : " + folder.getMessageCount());
+        System.out.println("No of Unread Messages : " + folder.getUnreadMessageCount());    
+		} catch (NoSuchProviderException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return anzahl;
+		
+
+	}
+
+	@Override
+	public boolean logout() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public String getEmail(int index) throws IOException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public static String getUser() {
+		return user;
+	}
+
+	public static void setUser(String user) {
+		EmailIMAP.user = user;
+	}
+
+	public static String getPassword() {
+		return password;
+	}
+
+	public static void setPassword(String password) {
+		EmailIMAP.password = password;
+	}
+	
+	
+	
+	
 
 }
