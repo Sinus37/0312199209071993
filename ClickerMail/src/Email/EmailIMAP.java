@@ -99,7 +99,7 @@ public class EmailIMAP implements EmailInterface {
 	// ->	
 						htmlCode = messageContentMimeMP.getBodyPart(1).getContent().toString();	            		
 		        		String test = htmlCode.toString();
-	            		gen.setList(test, from2, sender);
+	          		gen.setList(test, from2, sender);
 						if (isDeleteMail() == true) {
 							System.out.println("Email wurde erfolgreich gelöscht");
 							message.setFlag(Flags.Flag.DELETED, true);
@@ -113,7 +113,7 @@ public class EmailIMAP implements EmailInterface {
     // ->		
             	htmlCode =  message.getContent().toString();
         		String test = htmlCode.toString();
-        		gen.setList(test, from2, sender);
+        	    		gen.setList(test, from2, sender);
         		if (isDeleteMail() == true) {
         			System.out.println("Email wurde erfolgreich gelöscht");
         			message.setFlag(Flags.Flag.DELETED, true);
