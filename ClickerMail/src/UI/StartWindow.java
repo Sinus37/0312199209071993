@@ -98,7 +98,7 @@ public class StartWindow {
 				setUserLoginEmail(userLoginEmail);
 				setUserLoginPw(userLoginPw);	
 				main.setVisible(true);
-				main.start(userLoginEmail, userLoginPw);
+				//main.start(userLoginEmail, userLoginPw);
 				frmLogin.setVisible(false);
 			}
 		});
@@ -118,7 +118,7 @@ public class StartWindow {
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				main.setVisible(true);
-				main.start("cfmap14@googlemail.com", "ClickMailer1!");
+				//main.start("cfmap14@googlemail.com", "ClickMailer1!");
 				frmLogin.setVisible(false);
 				
 			}
