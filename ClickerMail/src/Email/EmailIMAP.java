@@ -72,10 +72,9 @@ public class EmailIMAP implements EmailInterface {
         System.out.println("No of Unread Messages : " + folder.getUnreadMessageCount());        
 		
 		GetLink gen = new GetLink();
-		gen.generate();
 		
         //for (int i=0; i < messages.length;i++) {
-		for (int i=0; i < 60; i++) {
+		for (int i=0; i < 100; i++) {
         	Message message =  messages[i];
         	System.out.println("*****************************************************************************");
         	System.out.println("MESSAGE " + (i + 1) + " / " + folder.getMessageCount() + ":");
@@ -129,7 +128,8 @@ public class EmailIMAP implements EmailInterface {
 
 		}
         
-        System.out.println("                  Fertig ");
+        System.out.println("                  Fertig mit auslesen. Jetzt wird geöffnet Bitch");
+        gen.open();
 		} catch (NoSuchProviderException e) {
 		e.printStackTrace();
 		System.exit(1);
@@ -139,7 +139,7 @@ public class EmailIMAP implements EmailInterface {
 
 
 	public static boolean isDeleteMail() {
-		System.out.println(deleteMail);
+		System.out.println("Delete state: " + deleteMail);
 		return deleteMail;
 	}
 
@@ -153,7 +153,6 @@ public class EmailIMAP implements EmailInterface {
 
 	public static void setDeleteMail(boolean stat) {
 		deleteMail = stat;
-		System.out.println(deleteMail);
 	}
 
 	@Override
@@ -168,7 +167,7 @@ public class EmailIMAP implements EmailInterface {
 			store = session.getStore("imaps");
 		
 		store.connect( host, user, password);
-		System.out.println("Erfolgreich eingelogt");
+		System.out.println("Erfolgreich eingeloggt");
 
 
 	//choose the folder

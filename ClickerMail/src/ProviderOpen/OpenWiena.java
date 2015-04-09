@@ -19,7 +19,7 @@ public class OpenWiena {
 	//String middlePart;
 	String endPart;
 	
-	public void open(String mail){
+	public void getLink(String mail){
 		System.out.println("Art der Email : Wiena");
 		wienaTemp = mail.split("\\n+");
 		System.out.println("Vorhandene Zeilen : " + wienaTemp.length);
@@ -68,7 +68,7 @@ public class OpenWiena {
 					System.out.println("Link : " + wienaTemp[i]);
 					System.out.println("To Check");
 					int startLink = wienaTemp[i].indexOf("http://wiena.eu/paid4/pm_uml/click");
-					int endLink = wienaTemp[i].indexOf("ENDE=ENDE");
+					//int endLink = wienaTemp[i].indexOf("ENDE=ENDE");
 			
 					String tempText = wienaTemp[i].substring(startLink, wienaTemp[i].length()-1);
 					System.out.println(tempText);
