@@ -6,10 +6,16 @@ import java.awt.FlowLayout;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
+<<<<<<< HEAD
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 
+=======
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextArea;
+import javax.swing.JLabel;
+>>>>>>> develop
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -25,7 +31,11 @@ public class AGBWindow extends JDialog {
 	public static void main(String[] args) {
 		try {
 			AGBWindow dialog = new AGBWindow();
+<<<<<<< HEAD
 			dialog.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+=======
+			dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+>>>>>>> develop
 			dialog.setVisible(true);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -52,7 +62,10 @@ public class AGBWindow extends JDialog {
 			{
 				JButton okButton = new JButton("OK");
 				okButton.addActionListener(new ActionListener() {
+<<<<<<< HEAD
 					@Override
+=======
+>>>>>>> develop
 					public void actionPerformed(ActionEvent e) {
 						setAgbsAreRead(true);
 						System.out.println("AGBs gelesen");
@@ -67,7 +80,10 @@ public class AGBWindow extends JDialog {
 			{
 				JButton cancelButton = new JButton("Cancel");
 				cancelButton.addActionListener(new ActionListener() {
+<<<<<<< HEAD
 					@Override
+=======
+>>>>>>> develop
 					public void actionPerformed(ActionEvent e) {
 						System.out.println("AGB geschlossen ohne zu lesen");
 						dispose();

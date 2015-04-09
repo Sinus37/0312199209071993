@@ -1,456 +1,555 @@
 package ChooseLink;
 
+import java.awt.Desktop;
 import java.io.IOException;
-
-import ProviderOpen.OpenAroundTheMoney;
-import ProviderOpen.OpenAtlantisMails;
-import ProviderOpen.OpenBoni4You;
-import ProviderOpen.OpenBoniTV;
-import ProviderOpen.OpenBonimail;
-import ProviderOpen.OpenBonix;
-import ProviderOpen.OpenBonusBunny;
-import ProviderOpen.OpenBonusEmails;
-import ProviderOpen.OpenCashDevil;
-import ProviderOpen.OpenCashMails;
-import ProviderOpen.OpenCashTown;
-import ProviderOpen.OpenDailyCent;
-import ProviderOpen.OpenDodonaMails;
-import ProviderOpen.OpenDondino;
-import ProviderOpen.OpenDresdenMails;
-import ProviderOpen.OpenDschungel;
-import ProviderOpen.OpenEarnstar;
-import ProviderOpen.OpenEliteMailer;
-import ProviderOpen.OpenEuroearn;
-import ProviderOpen.OpenFairpaidmail;
-import ProviderOpen.OpenGeldboni;
-import ProviderOpen.OpenGongMails;
-import ProviderOpen.OpenIdealShoppen;
-import ProviderOpen.OpenInfomails;
-import ProviderOpen.OpenIntermailLive;
-import ProviderOpen.OpenKlickportal24;
-import ProviderOpen.OpenKronenMailer;
-import ProviderOpen.OpenLiveMails;
-import ProviderOpen.OpenLouisMailer;
-import ProviderOpen.OpenLugrando;
-import ProviderOpen.OpenMailerOne;
-import ProviderOpen.OpenMaxMailer;
-import ProviderOpen.OpenMaxearn;
-import ProviderOpen.OpenMoneyMails24;
-import ProviderOpen.OpenPaidportal24;
-import ProviderOpen.OpenProfitmails;
-import ProviderOpen.OpenProvanceMailer;
-import ProviderOpen.OpenQassa;
-import ProviderOpen.OpenQuestler;
-import ProviderOpen.OpenReading4Money;
-import ProviderOpen.OpenSparMailer;
-import ProviderOpen.OpenStarmailer;
-import ProviderOpen.OpenUnique;
-import ProviderOpen.OpenWhiteAngelMails;
-import ProviderOpen.OpenWiena;
-import ProviderOpen.OpenXXLpool;
-import ProviderOpen.OpenYbbo;
-import ProviderOpen.OpeneBesucher;
+import java.net.URL;
+import java.util.ArrayList;
 
 public class GetLink {
-	
+
 	int scase;
+	ArrayList<String> AroundTheMoney = new ArrayList<String>();
+	ArrayList<String> AtlantisMails = new ArrayList<String>();
+	ArrayList<String> Boni4You = new ArrayList<String>();
+	ArrayList<String> Bonimail = new ArrayList<String>();
+	ArrayList<String> BoniTV = new ArrayList<String>();
+	ArrayList<String> Bonix = new ArrayList<String>();
+	ArrayList<String> BonusBunny = new ArrayList<String>();
+	ArrayList<String> BonusEmails = new ArrayList<String>();
+	ArrayList<String> CashDevil = new ArrayList<String>();
+	ArrayList<String> CashMails = new ArrayList<String>();
+	ArrayList<String> CashTown = new ArrayList<String>();
+	ArrayList<String> DailyCent = new ArrayList<String>();
+	ArrayList<String> DodonaMails = new ArrayList<String>();
+	ArrayList<String> Dondino = new ArrayList<String>();
+	ArrayList<String> DresendMails = new ArrayList<String>();
+	ArrayList<String> Dschungel = new ArrayList<String>();
+	ArrayList<String> Earnstar = new ArrayList<String>();
+	ArrayList<String> eBesucher = new ArrayList<String>();
+	ArrayList<String> EliteMailer = new ArrayList<String>();
+	ArrayList<String> Euroearn = new ArrayList<String>();
+	ArrayList<String> Fairpaidmail = new ArrayList<String>();
+	ArrayList<String> Geldboni = new ArrayList<String>();
+	ArrayList<String> GongMails = new ArrayList<String>();
+	ArrayList<String> IdealShoppen = new ArrayList<String>();
+	ArrayList<String> infomails = new ArrayList<String>();
+	ArrayList<String> IntermailLive = new ArrayList<String>();
+	ArrayList<String> Klickportal24 = new ArrayList<String>();
+	ArrayList<String> KronenMailer = new ArrayList<String>();
+	ArrayList<String> LiveMails = new ArrayList<String>();
+	ArrayList<String> LouisMails = new ArrayList<String>();
+	ArrayList<String> Lugrando = new ArrayList<String>();
+	ArrayList<String> MailerOne = new ArrayList<String>();
+	ArrayList<String> Maxearn = new ArrayList<String>();
+	ArrayList<String> MaxMailer = new ArrayList<String>();
+	ArrayList<String> MoneyMails24 = new ArrayList<String>();
+	ArrayList<String> Paid4 = new ArrayList<String>();
+	ArrayList<String> Paidportal24 = new ArrayList<String>();
+	ArrayList<String> Profitmails = new ArrayList<String>();
+	ArrayList<String> ProvanceMailer = new ArrayList<String>();
+	ArrayList<String> Qassa = new ArrayList<String>();
+	ArrayList<String> Questler = new ArrayList<String>();
+	ArrayList<String> Reading4Money = new ArrayList<String>();
+	ArrayList<String> SparMailer = new ArrayList<String>();
+	ArrayList<String> Starmailer = new ArrayList<String>();
+	ArrayList<String> Unique = new ArrayList<String>();
+	ArrayList<String> WhiteAngelMails = new ArrayList<String>();
+	ArrayList<String> Wiena = new ArrayList<String>();
+	ArrayList<String> XXLpool = new ArrayList<String>();
+	ArrayList<String> Ybbo = new ArrayList<String>();
+
+	ArrayList<String> tempContain = new ArrayList<String>();
+	ArrayList<ArrayList<String>> AllAL = new ArrayList<ArrayList<String>>();
+	String[] finishedLink = new String[2];
 	
-	public void generate(){
-		//TODO gen all
+	
+	public void generate() {
+		//add all ArrayLists to one ArrayList
+		AllAL.add(Ybbo);
+		AllAL.add(XXLpool);
+		AllAL.add(Wiena);
+		AllAL.add(WhiteAngelMails);
+		AllAL.add(Unique);
+		AllAL.add(Starmailer);
+		AllAL.add(Ybbo);
+		AllAL.add(SparMailer);
+		AllAL.add(Reading4Money);
+		AllAL.add(Questler);
+		AllAL.add(Qassa);
+		AllAL.add(ProvanceMailer);
+		AllAL.add(Profitmails);
+		AllAL.add(Paidportal24);
+		AllAL.add(Paid4);
+		AllAL.add(MoneyMails24);
+		AllAL.add(MaxMailer);
+		AllAL.add(Maxearn);
+		AllAL.add(MailerOne);
+		AllAL.add(Lugrando);
+		AllAL.add(LouisMails);
+		AllAL.add(LiveMails);
+		AllAL.add(KronenMailer);
+		AllAL.add(Klickportal24);
+		AllAL.add(IntermailLive);
+		AllAL.add(infomails);
+		AllAL.add(IdealShoppen);
+		AllAL.add(GongMails);
+		AllAL.add(Geldboni);
+		AllAL.add(Fairpaidmail);
+		AllAL.add(Euroearn);
+		AllAL.add(EliteMailer);
+		AllAL.add(eBesucher);
+		AllAL.add(Earnstar);
+		AllAL.add(Dschungel);
+		AllAL.add(DresendMails);
+		AllAL.add(Dondino);
+		AllAL.add(DodonaMails);
+		AllAL.add(DailyCent);
+		AllAL.add(CashTown);
+		AllAL.add(CashMails);
+		AllAL.add(CashDevil);
+		AllAL.add(BonusEmails);
+		AllAL.add(BonusBunny);
+		AllAL.add(Bonix);
+		AllAL.add(BoniTV);
+		AllAL.add(Bonimail);
+		AllAL.add(Boni4You);
+		AllAL.add(AtlantisMails);
+		AllAL.add(AroundTheMoney);
 	}
 
-	public void setList(String mail, String sender, String kindOf) throws IOException {
+	public void setList(String mail, String sender, String kindOf)
+			throws IOException {
 		System.out.println("Sender: " + sender);
-	  if(sender.contains("Provence")){
-			 scase = 1;	
+		if (sender.contains("Provence")) {
+			scase = 1;
 		}
-		if(sender.contains("reading")){
-			 scase = 2;
+		if (sender.contains("reading")) {
+			tempContain.add("www.reading4money.de/paidmail.php");
+			Reading4Money.add(getLink(mail, "OneMail", "EndAndMovePointer", tempContain, "mid=0", 5)[0]);
+			tempContain.clear();
 		}
-		if(sender.contains("Qassa")){
-			 scase = 3;
+		if (sender.contains("Qassa")) {
+			tempContain.add("www.qassa.de/am.php?h=");
+			Qassa.add(getLink(mail, "OneMail", "OnlyMovePointer", tempContain, "", 76)[0]);
+			tempContain.clear();
 		}
-		if(sender.contains("XXLpool")){
-			 scase = 4;
+		if (sender.contains("XXLpool")) {
+			tempContain.add("http://www.xxlpool.de/postfach.php?userid=");
+			XXLpool.add(getLink(mail, "OneMail", "OnlyMovePointer", tempContain, "", 85)[0]);
+			tempContain.clear();
 		}
-		if(sender.contains("bonimail")){
-			 scase = 5;
+		if (sender.contains("bonimail")) {
+			tempContain.add("http://www.bonimail.de/link/?");
+			Bonimail.add(getLink(mail, "OneMail", "OnlyMovePointer", tempContain, "", 59)[0]);
+			tempContain.clear();
 		}
-		if(sender.contains("fairpaidmail")){
-			 scase = 6;
+		if (sender.contains("fairpaidmail")) {
+			tempContain.add("http://www.fairpaidmail.com/on/de/");
+			tempContain.add("http://www.fairpaidmail.com/pm/de/");
+			for(int i = 0; i < tempContain.size() -1; i++){
+				Fairpaidmail.add(getLink(mail, "MoreLinks", "CompleteLine", tempContain, "", 59)[i]);
+			}
+			tempContain.clear();
 		}
-		if(sender.contains("Profitmails")){
-			 scase = 7;
+		if (sender.contains("Profitmails")) {
+			tempContain.add("http://www.profitmails.de/pm.php?");
+			Bonimail.add(getLink(mail, "OneMail", "OnlyMovePointer", tempContain, "", 59)[0]);
+			tempContain.clear();
 		}
-		if(sender.contains("info-mails")){
-			 scase = 8;
+		if (sender.contains("info-mails")) {
+			tempContain.add("http://www.info-mails.de/klick_profiwin.php?id=199730");
+			Bonimail.add(getLink(mail, "OneMail", "OnlyEnd", tempContain, "k=0", 0)[0]);
+			tempContain.clear();
 		}
-		if(sender.contains("bonus-emails")){
-			 scase = 9;
+		if (sender.contains("bonus-emails")) {
+			tempContain.add("http://www.bonus-emails.de/paidklick.php?id=");
+			Bonimail.add(getLink(mail, "OneMail", "EndAndMovePointer", tempContain, "target", -2)[0]);
+			tempContain.clear();
 		}
-		if(sender.contains("Questler")){
-			 scase = 10;
+		if (sender.contains("Questler")) {
+			tempContain.add("http://questler.de/link.php?id=");
+			Bonimail.add(getLink(mail, "OneMail", "EndAndMovePointer", tempContain, "user=273220", 11)[0]);
+			tempContain.clear();
 		}
-		if(sender.contains("earnstar.de")){
-			 scase = 11;
+		if (sender.contains("earnstar.de")) {
+			tempContain.add("http://www.earnstar.de/link.php?go=");
+			Bonimail.add(getLink(mail, "OneMail", "EndAndMovePointer", tempContain, "go=", 31)[0]);
+			tempContain.clear();
 		}
-		if(sender.contains("Gongmails.de")){
-			 scase = 12;
+		if (sender.contains("Gongmails.de")) {
+			tempContain.add("http://www.Gongmails.de/questionmail.php?username=cfmap");
+			Bonimail.add(getLink(mail, "OneMail", "EndAndMovePointer", tempContain, "cfmap", 19)[0]);
+			tempContain.clear();
 		}
-		if(sender.contains("Cash-Town.de")){
-			 scase = 13;
+		if (sender.contains("Cash-Town.de")) {
+			tempContain.add("http://cash-town.de/askmail.php?uid=");
+			tempContain.add("http://cash-town.de/paidmail.php?username=cfmap&");
+			Bonimail.add(getLink(mail, "MoreLinks", "EndAndMovePointer", tempContain, "uid=", 19)[0]);
+			tempContain.clear();
 		}
-		if(sender.contains("Ybbo")){
-			 scase = 14;
+		if (sender.contains("Ybbo")) {
+			tempContain.add("http://www.ybbo.de/_p.");
+			Bonimail.add(getLink(mail, "OneLink", "EndAndMovePointer", tempContain, "rdb=7", 4)[0]);
+			tempContain.clear();
 		}
-		if(sender.contains("Kronen-Mailer")){
-			 scase = 15;
+		if (sender.contains("Kronen-Mailer")) {
+			tempContain.add("http://www.kronen-mailer.de/paidmail.php?username=cfmap");
+			Bonimail.add(getLink(mail, "OneLink", "EndAndMovePointer", tempContain, "stan", 15)[0]);
+			tempContain.clear();
 		}
-		if(sender.contains("Live-Mails")){
-			 scase = 16;
+		if (sender.contains("Live-Mails")) {
+			tempContain.add("http://www.live-mails.de/pmail");
+			Bonimail.add(getLink(mail, "OneLink", "OnlyEnd", tempContain, "\">", 0)[0]);
+			tempContain.clear();
 		}
-		if(sender.contains("Louis-Mailer")){
-			 scase = 17;
+		if (sender.contains("Louis-Mailer")) {
+			tempContain.add("www.louis-mailer.de/pmail");
+			Bonimail.add(getLink(mail, "OneLink", "EndAndMovePointer", tempContain, ">Bestätigen", -1)[0]);
+			tempContain.clear();
 		}
-		if(sender.contains("Max-Mails")){
-			scase = 18;
+		if (sender.contains("Max-Mails")) {
+			tempContain.add("www.max-mails.de/pmail");
+			Bonimail.add(getLink(mail, "OneLink", "CompleteLine", tempContain, "", 0)[0]);
+			tempContain.clear();
 		}
-		if (sender.contains("Maxearn")){
-			scase = 19;
+		if (sender.contains("Maxearn")) {
+			tempContain.add("www.maxearn.de/pmail");
+			Bonimail.add(getLink(mail, "OneLink", "EndAndMovePointer", tempContain, ">Bestätigen", -1)[0]);
+			tempContain.clear();
 		}
-		if (sender.contains("Spar-Mailer")){
-			scase = 20;
+		if (sender.contains("Spar-Mailer")) {
+			tempContain.add("www.spar-mailer.de/mail.php");
+			Bonimail.add(getLink(mail, "OneLink", "OnlyMovePointer", tempContain, "", 59)[0]);
+			tempContain.clear();
 		}
-		if (sender.contains("Paidportal24")){
-			scase = 21;
+		if (sender.contains("Paidportal24")) {
+			tempContain.add("www.paidportal24.de/pmail.php?");
+			Bonimail.add(getLink(mail, "OneLink", "EndAndMovePointer", tempContain, "><img", -1)[0]);
+			tempContain.clear();
 		}
-		if (sender.contains("Cash-mails.eu")){
-			scase = 22;
+		if (sender.contains("Cash-mails.eu")) {
+			tempContain.add("http://www.cash-mails.eu/");
+			Bonimail.add(getLink(mail, "OneLink", "CompleteLine", tempContain, "", 0)[0]);
+			tempContain.clear();
 		}
-		if (sender.contains("EuroEarn.de")){
-			scase = 23;
+		if (sender.contains("EuroEarn.de")) {
+			tempContain.add("www.euroearn.de/");
+			Bonimail.add(getLink(mail, "OneLink", "CompleteLine", tempContain, "", 0)[0]);
+			tempContain.clear();
 		}
-		if (sender.contains("Unique-Mails")){
-			scase = 24;
+		if (sender.contains("Unique-Mails")) {
+			tempContain.add("http://www.unique-mails.de/index.php?mod=paidmai");
+			tempContain.add("http://www.unique-mails.de/index.php?mod=questmail");
+			for(int i = 0; i < tempContain.size() -1; i++){
+				Bonimail.add(getLink(mail, "OneLink", "CompleteLine", tempContain, "", 0)[i]);
+			}
+			tempContain.clear();
 		}
-		if (sender.contains("Money-Mails")){
-			scase = 25;
+		if (sender.contains("Money-Mails")) {
+			tempContain.add("www.money-mails24.de/index.php?mod=paidmail");
+			tempContain.add("www.money-mails24.de/index.php?mod=questmail");
+			for(int i = 0; i < tempContain.size() -1; i++){
+				Bonimail.add(getLink(mail, "OneLink", "CompleteLine", tempContain, "", 0)[i]);
+			}
+			tempContain.clear();
 		}
-		if (sender.contains("Klickportal24")){
-			scase = 26;
+		if (sender.contains("Klickportal24")) {
+			tempContain.add("www.klickportal24.de/pmail.php?");
+			Bonimail.add(getLink(mail, "OneLink", "EndAndMovePointer", tempContain, "><img", -1)[0]);
+			tempContain.clear();
 		}
-		if (sender.contains("Boni4you")){
-			scase = 27;
+		if (sender.contains("Boni4you")) {
+			tempContain.add("www.boni4you.de/index.php?mod=bonusmail");
+			tempContain.add("www.boni4you.de/index.php?mod=questmail");
+			for(int i = 0; i < tempContain.size() -1; i++){
+				Bonimail.add(getLink(mail, "OneLink", "CompleteLine", tempContain, "", 0)[i]);
+			}
+			tempContain.clear();
 		}
-		if (sender.contains("Intermail-Live")){
-			scase = 28;
+		if (sender.contains("Intermail-Live")) {
+			tempContain.add("www.intermail-live.de/pmail.php?");
+			Bonimail.add(getLink(mail, "OneLink", "EndAndMovePointer", tempContain, ">Bestätig", -1)[0]);
+			tempContain.clear();
 		}
-		if (sender.contains("Geldboni")){
-			scase = 29;
+		if (sender.contains("Geldboni")) {
+			tempContain.add("www.geldboni.de/index.php?mod=p");
+			Bonimail.add(getLink(mail, "OneLink", "CompleteLine", tempContain, "", 0)[0]);
+			tempContain.clear();
 		}
-		if (sender.contains("Bonix")){
-			scase = 30;
+		if (sender.contains("Bonix")) {
+			tempContain.add("http://www.bonix.org/mail.php");
+			Bonimail.add(getLink(mail, "OneLink", "CompleteLine", tempContain, "", 0)[0]);
+			tempContain.clear();
 		}
-		if (sender.contains("Dresden-Mails")){
-			scase = 31;
+		if (sender.contains("Dresden-Mails")) {
+			tempContain.add("http://www.dresden-mails.de/index.php?mod=questmai");
+			tempContain.add("http://www.dresden-mails.de/index.php?mod=paid");
+			tempContain.add("http://www.dresden-mails.de/index.php?mod=bonus");
+			for(int i = 0; i < tempContain.size() -1; i++){
+				Bonimail.add(getLink(mail, "OneLink", "CompleteLine", tempContain, "", 0)[i]);
+			}
+			tempContain.clear();
 		}
-		if (sender.contains("boni.tv")){
-			scase = 32;
+		if (sender.contains("boni.tv")) {
+			tempContain.add("boni.tv/earn");
+			Bonimail.add(getLink(mail, "OneLink", "CompleteLineAndMovePointer", tempContain, "", -3)[0]);
+			tempContain.clear();
 		}
-		if (sender.contains("Lugrando.de")){
-			scase = 33;
+		if (sender.contains("Lugrando.de")) {
+			tempContain.add("http://www.lugrando.de/mail.php");
+			Bonimail.add(getLink(mail, "OneLink", "OnlyEnd", tempContain, "><b>", 0)[0]);
+			tempContain.add("http://www.lugrando.de/ba_teilnehmen");
+			Bonimail.add(getLink(mail, "OneLink", "EndAndMovePointer", tempContain, " ", -1)[0]);
+			tempContain.clear();
 		}
-		if (sender.contains("atlantis-mails")){
-			scase = 34;
+		if (sender.contains("atlantis-mails")) {
+			tempContain.add("http://www.atlantis-mails.de/index.php?mod=questmail");
+			tempContain.add("http://www.atlantis-mails.de/index.php?mod=paidmail");
+			for(int i = 0; i < tempContain.size() -1; i++){
+				Bonimail.add(getLink(mail, "OneLink", "CompleteLine", tempContain, "", 0)[i]);
+			}
+			tempContain.clear();
 		}
-		if (sender.contains("ideal-shoppen")){
-			scase = 35;
+		if (sender.contains("ideal-shoppen")) {
+			tempContain.add("http://www.ideal-shoppen.de/cbm.");
+			Bonimail.add(getLink(mail, "OneLink", "EndAndMovePointer", tempContain, "><", -1)[0]);
+			tempContain.clear();
 		}
-		if (sender.contains("white-angel-mails")){
-			scase = 36;
+		if (sender.contains("white-angel-mails")) {
+			tempContain.add("http://www.white-angel-mails.de/bestaetigen");
+			Bonimail.add(getLink(mail, "OneLink", "CompleteLine", tempContain, "", -1)[0]);
+			tempContain.clear();
 		}
-		if (sender.contains("eBesucher.De")){
-			scase = 37;
+		if (sender.contains("eBesucher.De")) {
+			tempContain.add("www.ebesucher.de/mailcheck.php?uid=734228");
+			Bonimail.add(getLink(mail, "OneLink", "OnlyEnd", tempContain, "\"", 0)[0]);
+			tempContain.clear();
 		}
-		if (sender.contains("Elite-Mailer")){
-			scase = 38; 
-		}
-		if (sender.contains("Wiena")){
+		if (sender.contains("Elite-Mailer")) {
+			tempContain.add("http://www.elite-mailer.de/pmail");
+			Bonimail.add(getLink(mail, "OneLink", "EndAndMovePointer", tempContain, "><", -1)[0]);
+			tempContain.clear();
+		}//TODO: FIX
+		if (sender.contains("Wiena")) {
 			scase = 39;
 		}
-		if (sender.contains("mailer-")){
-			scase = 40;
+		if (sender.contains("mailer-")) {
+			tempContain.add("mailer-ONE.de/angeboten.php?");
+			Bonimail.add(getLink(mail, "OneLink", "EndAndMovePointer", tempContain, "target", -2)[0]);
+			tempContain.clear();
 		}
-		if (sender.contains("Bonus Bunny")){
-			scase = 41;
-		}
+		if (sender.contains("Bonus Bunny")) {
+			tempContain.add("www.bonus-bunny.de/pmail.php");
+			Bonimail.add(getLink(mail, "OneLink", "EndAndMovePointer", tempContain, " target", -1)[0]);
+			tempContain.clear();
+		}//TODO: FIX
 		if (sender.contains("Dodona-Mails")) {
-			scase = 42;
-		}
+			tempContain.add("www.dodona-mails.de/mail.");
+			Bonimail.add(getLink(mail, "OneLink", "EndAndMovePointer", tempContain, " target", -1)[0]);
+			tempContain.clear();
+			tempContain.add("");
+			Bonimail.add(getLink(mail, "OneLink", "EndAndMovePointer", tempContain, " target", -1)[0]);
+			tempContain.clear();
+		}//TODO: FIX
 		if (sender.contains("dondino")) {
-			scase = 43;
+			tempContain.add("");
+			Bonimail.add(getLink(mail, "OneLink", "CompleteLineAndMovePointer", tempContain, "", -1)[0]);
+			tempContain.clear();
 		}
 		if (sender.contains("DailyCent")) {
-			scase = 44;
+			tempContain.add("http://www.dailycent.de/");
+			Bonimail.add(getLink(mail, "OneLink", "CompleteLineAndMovePointer", tempContain, "", -1)[0]);
+			tempContain.clear();
 		}
 		if (sender.contains("cashdevil.de")) {
-			scase = 45;
+			tempContain.add("http://www.cashdevil.de/paidmail.php?");
+			Bonimail.add(getLink(mail, "OneLink", "EndAndMovePointer", tempContain, "\">", -1)[0]);
+			tempContain.clear();
 		}
 		if (sender.contains("Around-the-Money")) {
-			scase = 46;
+			tempContain.add("www.around-the-money.de/pf.php?");
+			Bonimail.add(getLink(mail, "OneLink", "CompleteLineAndMovePointer", tempContain, "\">", -1)[0]);
+			tempContain.clear();
 		}
 		if (sender.contains("Starmailer.de")) {
-			scase = 47;
+			tempContain.add("http://www.Starmailer.de/questionmail.php");
+			Bonimail.add(getLink(mail, "OneLink", "CompleteLineAndMovePointer", tempContain, "id=", 11)[0]);
+			tempContain.clear();
 		}
 		if (sender.contains("Dschungel-Mails.de")) {
-			scase = 48;
+			tempContain.add("http://www.dschungel-mails.de/pmail.php");
+			Bonimail.add(getLink(mail, "OneLink", "CompleteLineAndMovePointer", tempContain, "img", -3)[0]);
+			tempContain.clear();
+		}
+	}
+	
+	public void open(){
+		//construct all ArrayLists in one ArrayList
+		generate();
+		
+		//now start opening the links from all ArrayLists
+		for(int i = 0; i < AllAL.size(); i++){
+			if(AllAL.get(i) != null){
+				for(int j = 0; j < AllAL.get(i).size(); j++){
+					try{
+						if(AllAL.get(i).get(j) != null){
+							Desktop.getDesktop().browse(new URL(AllAL.get(i).get(j)).toURI());
+					        System.out.println("Nachricht erfolgreich geöffnet");	
+						}
+			        } 
+					catch(Exception e){
+						e.printStackTrace();
+					}
+				}
+			}
+		}
+		System.out.println("********************************");
+		System.out.println("We are done snitch");
+	}
+	
+	
+	public String[] getLink(String mail, String ProviderType, String MailType, ArrayList<String> contain, String end, int movePointer){
+		//split mail into lines
+		String LinkTemp[] = mail.split("\\n+");
+		
+		//if Provider has more than one type of link (e.g. QuestionMail, PaidMail, etc)
+		switch (ProviderType) {
+		case "OneLink":
+			//differenciate between different types of Providers pattern (e.g. complete line, a specific char 
+			//indicating the end of link, etc.)
+			switch (MailType) {
+			case "OnlyEnd":
+				for(int i = 0; i < LinkTemp.length - 1; i++){
+					if(LinkTemp[i].contains(contain.get(0))){
+						int startLink = LinkTemp[i].indexOf("http");
+						int endLink = LinkTemp[i].indexOf(end);
+						finishedLink[0] = LinkTemp[i].substring(startLink, endLink);
+					}
+				}
+				break;
+				
+			case "EndAndMovePointer":
+				for(int i = 0; i < LinkTemp.length - 1; i++){
+					if(LinkTemp[i].contains(contain.get(0))){
+						int startLink = LinkTemp[i].indexOf("http");
+						int endLink = LinkTemp[i].indexOf(end);
+						finishedLink[0] = LinkTemp[i].substring(startLink, endLink + movePointer);
+					}
+				}
+				break;
+				
+			case "CompleteLine":
+				for(int i = 0; i < LinkTemp.length - 1; i++){
+					if(LinkTemp[i].contains(contain.get(0))){
+						int startLink = LinkTemp[i].indexOf("http");
+						int endLink = LinkTemp[i].length() - 1;
+						finishedLink[0] = LinkTemp[i].substring(startLink, endLink);
+					}
+				}
+				break;
+				
+			case "CompleteLineAndMovePointer":
+				for(int i = 0; i < LinkTemp.length - 1; i++){
+					if(LinkTemp[i].contains(contain.get(0))){
+						int startLink = LinkTemp[i].indexOf("http");
+						int endLink = LinkTemp[i].length() - movePointer;
+						finishedLink[0] = LinkTemp[i].substring(startLink, endLink);
+					}
+				}
+				break;
+				
+			case "OnlyMovePointer":
+				for(int i = 0; i < LinkTemp.length - 1; i++){
+					if(LinkTemp[i].contains(contain.get(0))){
+						int startLink = LinkTemp[i].indexOf("http");
+						finishedLink[0] = LinkTemp[i].substring(startLink, startLink + movePointer);
+					}
+				}
+				break;
+
+			default:
+				System.out.println("No MailType defined yet for " + ProviderType);
+			}
+			break;
+		case "MoreLinks":
+			switch (MailType) {
+			case "OnlyEnd":
+				for(int i = 0; i < contain.size() - 1; i++){
+					for(int j = 0; j < LinkTemp.length - 1; j++){
+						if(LinkTemp[j].contains(contain.get(i))){
+							int startLink = LinkTemp[i].indexOf("http");
+							int endLink = LinkTemp[i].indexOf(end);
+							finishedLink[i] = LinkTemp[i].substring(startLink, endLink);
+						}
+					}
+				}
+				break;
+				
+			case "EndAndMovePointer":
+				for(int i = 0; i < contain.size() - 1; i++){
+					for(int j = 0; j < LinkTemp.length - 1; j++){
+						if(LinkTemp[j].contains(contain.get(i))){
+							int startLink = LinkTemp[i].indexOf("http");
+							int endLink = LinkTemp[i].indexOf(end);
+							finishedLink[i] = (LinkTemp[i].substring(startLink, endLink + movePointer));
+						}
+					}
+				}
+				break;
+				
+			case "CompleteLine":
+				for(int i = 0; i < contain.size() - 1; i++){
+					for(int j = 0; j < LinkTemp.length - 1; j++){
+						if(LinkTemp[j].contains(contain.get(i))){
+							int startLink = LinkTemp[i].indexOf("http");
+							int endLink = LinkTemp[i].length() - 1;
+							finishedLink[i] = LinkTemp[i].substring(startLink, endLink);
+						}
+					}
+				}
+				break;
+				
+			case "CompleteLineAndMovePointer":
+				for(int i = 0; i < contain.size() - 1; i++){
+					for(int j = 0; j < LinkTemp.length - 1; j++){
+						if(LinkTemp[j].contains(contain.get(i))){
+							int startLink = LinkTemp[i].indexOf("http");
+							int endLink = LinkTemp[i].length() - movePointer;
+							finishedLink[i] = LinkTemp[i].substring(startLink, endLink);
+						}
+					}
+				}
+				break;
+				
+			case "OnlyMovePointer":
+				for(int i = 0; i < contain.size() - 1; i++){
+					for(int j = 0; j < LinkTemp.length - 1; j++){
+						if(LinkTemp[j].contains(contain.get(i))){
+							int startLink = LinkTemp[i].indexOf("http");
+							finishedLink[i] = LinkTemp[i].substring(startLink, startLink + movePointer);
+						}
+					}
+				}
+				break;
+
+			default:
+				System.out.println("No MailType defined yet for " + ProviderType);
+			}
+			break;
+
+		default:
+			System.out.println("This ProviderType is not defined yet");
+			break;
 		}
 		
-		switch(scase){
-			case 1: System.out.println("Email erhalten von Provence");
-					@SuppressWarnings("unused")
-					OpenProvanceMailer prov = new OpenProvanceMailer();
-					//prov.open(mail);
-					scase = 0;
-					break;
-			case 2 : System.out.println("Email erhalten von Reading4Money");
-					OpenReading4Money r4m = new OpenReading4Money();
-					r4m.open(mail, kindOf);
-					scase = 0;
-					break;
-			case 3 : System.out.println("Email erhalten von Quassa");
-					OpenQassa qassa = new OpenQassa();
-					qassa.open(mail);
-					scase = 0;
-					break;
-			case 4 : System.out.println("Email erhalten von XXLpool");
-					OpenXXLpool xxl = new OpenXXLpool();
-					xxl.open(mail);
-					scase = 0;
-					break;
-			case 5 : System.out.println("Email erhalten von bonimail");
-					OpenBonimail boni = new OpenBonimail();
-					boni.open(mail);
-					scase = 0;
-					break;
-			case 6 : System.out.println("Email erhalten von fairpaidmail");
-					OpenFairpaidmail fair = new OpenFairpaidmail();
-					fair.open(mail);
-					scase = 0;
-					break;
-			case 7 : System.out.println("Email erhalten von Profitmails");
-					OpenProfitmails prof = new OpenProfitmails();
-					prof.open(mail);
-					scase = 0;
-					break;
-			case 8 : System.out.println("Email erhalten von InfoMails");
-					OpenInfomails info = new OpenInfomails();
-					info.open(mail);
-					scase = 0;
-					break;
-			case 9 : System.out.println("Email erhalten von BonusEmails");
-					OpenBonusEmails bonus = new OpenBonusEmails();
-					bonus.open(mail);
-					scase = 0;
-					break;
-			case 10 : System.out.println("Email erhalten von Questler");
-					OpenQuestler open = new OpenQuestler();
-					open.open(mail);
-					scase = 0;
-					break;
-			case 11 : System.out.println("Email erhalten von Earnstar");
-					OpenEarnstar earn = new OpenEarnstar();
-					earn.open(mail);
-					scase = 0;
-					break;
-			case 12 : System.out.println("Email erhalten von Gongmails");
-					OpenGongMails gang = new OpenGongMails();
-					gang.open(mail);
-					scase = 0;
-					break;
-			case 13 : System.out.println("Email erhalten von Cash-Zown");
-					OpenCashTown cash = new OpenCashTown();
-					cash.open(mail);
-					scase = 0;
-					break;
-			case 14 : System.out.println("Email erhalten von YBBO");
-					OpenYbbo ybbo = new OpenYbbo();
-					ybbo.open(mail);
-					scase = 0;
-					break;
-			case 15 : System.out.println("Email erhalten von Kronen-Mailer");
-					OpenKronenMailer krone = new OpenKronenMailer();
-					krone.open(mail);
-					scase = 0;
-					break;
-			case 16 : 	System.out.println("Email erhalten von Live-Mails");
-					OpenLiveMails live = new OpenLiveMails();
-					live.open(mail);
-					scase = 0;
-					break;
-			case 17 : System.out.println("Email erhalten von Louis-Mailer");
-					OpenLouisMailer louis = new OpenLouisMailer();
-					louis.open(mail);
-					scase = 0;
-					break;
-			case 18 : System.out.println("Email erhalten von Max-Mailer");
-					OpenMaxMailer max = new OpenMaxMailer();
-					max.open(mail);
-					scase = 0;
-					break;
-			case 19 :  System.out.println("Email erhalten von Maxearn");
-					OpenMaxearn maxe = new OpenMaxearn();
-					maxe.open(mail);
-					scase = 0;
-					break;
-			case 20 : System.out.println("Email erhalten von Spar-Mailer");
-					OpenSparMailer spar = new OpenSparMailer();
-					spar.open(mail);
-					scase = 0;
-					break;
-			case 21 : System.out.println("Email erhalten von Paidportal24");
-					OpenPaidportal24 paid = new OpenPaidportal24();
-					paid.open(mail);
-					scase = 0;
-					break;
-			case 22 : System.out.println("Email erhalten von Cash-Mails");
-					OpenCashMails cashm = new OpenCashMails();
-					cashm.open(mail);
-					scase = 0;
-					break;
-			case 23 : System.out.println("Email erhalten von EuroEarn");
-					OpenEuroearn euro = new OpenEuroearn();
-					euro.open(mail);
-					scase = 0;
-					break;
-			case 24 : System.out.println("Email erhalten von Unique-Mails");
-					OpenUnique uni = new OpenUnique();
-					uni.open(mail);
-					scase = 0;
-					break;
-			case 25 : System.out.println("Email erhalten von Money-Mails");
-					OpenMoneyMails24 money = new OpenMoneyMails24();
-					money.open(mail);
-					scase = 0;
-					break; 
-			case 26 : System.out.println("Email erhalten von Klickportal24");
-					OpenKlickportal24 klick = new OpenKlickportal24();
-					klick.open(mail);
-					scase = 0;
-					break;
-			case 27 : System.out.println("Email erhalten von Boni4You");
-					OpenBoni4You boni4 = new OpenBoni4You();
-					boni4.open(mail);
-					scase = 0;
-					break;
-			case 28 : System.out.println("Email erhalten von Intermail-Live");
-					OpenIntermailLive inter = new OpenIntermailLive();
-					inter.open(mail);
-					scase = 0;
-					break;
-			case 29 : System.out.println("Email erhalten von Geldboni");
-					OpenGeldboni geld = new OpenGeldboni();
-					geld.open(mail);
-					scase = 0;
-					break;
-			case 30 : System.out.println("Email erhalten von Bonix");
-					OpenBonix bonix = new OpenBonix();
-					bonix.open(mail);
-					scase = 0;
-					break;
-			case 31 : System.out.println("Email erhalten von Dresden-Mails");
-					OpenDresdenMails dresden = new OpenDresdenMails();
-					dresden.open(mail);
-					scase = 0;
-					break;
-			case 32 : System.out.println("Email erhalten von BoniTV");
-					OpenBoniTV tv = new OpenBoniTV();
-					tv.open(mail);
-					scase = 0;
-					break;
-			case 33 : System.out.println("Email erhalten von Lugrando");
-					OpenLugrando lug = new OpenLugrando();
-					lug.open(mail);
-					scase = 0;
-					break;
-			case 34 : System.out.println("Email erhalten von Atlantis-Mails");
-					OpenAtlantisMails atlan = new OpenAtlantisMails();
-					atlan.open(mail);
-					scase = 0;
-					break;
-			case 35 : System.out.println("Email erhalten von Ideal-Shoppen");
-					OpenIdealShoppen shop = new OpenIdealShoppen();
-					shop.open(mail);
-					scase = 0;
-					break;
-			case 36 : System.out.println("Email erhalten von White-Angle-Mails");
-					OpenWhiteAngelMails white = new OpenWhiteAngelMails();
-					white.open(mail);
-					scase = 0;
-					break;
-			case 37 : System.out.println("Email erhalten von eBesucher");
-					OpeneBesucher ebesucher = new OpeneBesucher();
-					ebesucher.open(mail);
-					scase = 0;
-					break;
-			case 38 : System.out.println("Email erhalten von EliteMailer");
-					OpenEliteMailer elite = new OpenEliteMailer();
-					elite.open(mail);
-					scase = 0;
-					break;
-			case 39 : System.out.println("Email erhalten von Wiena");
-					OpenWiena wiena = new OpenWiena();
-					wiena.open(mail);
-					scase = 0;
-					break;
-			case 40 : System.out.println("Email erhalten von mailer-ONE");
-					OpenMailerOne one = new OpenMailerOne();
-					one.open(mail);
-					scase = 0;
-					break;
-			case 41 : System.out.println("Email erhalten von Bonus Bunny");
-					OpenBonusBunny bunny = new OpenBonusBunny();
-					bunny.open(mail);
-					scase = 0;
-					break;
-			case 42 : System.out.println("Email erhalten von Dodona-Mails");
-					OpenDodonaMails dodona = new OpenDodonaMails();
-					dodona.open(mail, sender);
-					scase = 0;
-					break;
-			case 43 : System.out.println("Email erhalten von Dondino");
-					OpenDondino don = new OpenDondino();
-					don.open(mail);
-					scase = 0;
-					break;
-			case 44 : System.out.println("Email erhalten von DailyCent");
-					OpenDailyCent daily = new OpenDailyCent();
-					daily.open(mail);
-					scase = 0;
-					break;
-			case 45 : System.out.println("Email erhalten von CashDevil");
-					OpenCashDevil devil = new OpenCashDevil();
-					devil.open(mail);
-					scase = 0;
-					break;
-			case 46 : System.out.println("Email erhalten von Around-The-Money");
-					OpenAroundTheMoney around = new OpenAroundTheMoney();
-					around.open(mail);
-					scase = 0;
-					break;
-			case 47 : System.out.println("Email erhalten von Starmailer");
-					OpenStarmailer star = new OpenStarmailer();
-					star.open(mail);
-					scase = 0;
-					break;
-			case 48 : System.out.println("Email erhalten von Dschungel-Mails");
-					OpenDschungel dschungel = new OpenDschungel();
-					dschungel.open(mail);
-					scase = 0;
-					break;
-					
-					
-			default : System.out.println("Kein bekannter Absender");
-		}				
+		return finishedLink;
 	}
+	
+	public String replace(String LinkTemp){
+		//3D, = am ende einer zeile, am=p; und amp; löschen
+		LinkTemp = LinkTemp.replaceAll("amp;", "");
+		LinkTemp = LinkTemp.replaceAll("am=p;", "");
+		return LinkTemp;
+	}
+	
 }

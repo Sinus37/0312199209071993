@@ -72,10 +72,16 @@ public class EmailIMAP implements EmailInterface {
         System.out.println("No of Unread Messages : " + folder.getUnreadMessageCount());        
 		
 		GetLink gen = new GetLink();
+<<<<<<< HEAD
 		gen.generate();
 		
         //for (int i=0; i < messages.length;i++) {
 		for (int i=0; i < 60; i++) {
+=======
+		
+        //for (int i=0; i < messages.length;i++) {
+		for (int i=0; i < 100; i++) {
+>>>>>>> develop
         	Message message =  messages[i];
         	System.out.println("*****************************************************************************");
         	System.out.println("MESSAGE " + (i + 1) + " / " + folder.getMessageCount() + ":");
@@ -99,7 +105,11 @@ public class EmailIMAP implements EmailInterface {
 	// ->	
 						htmlCode = messageContentMimeMP.getBodyPart(1).getContent().toString();	            		
 		        		String test = htmlCode.toString();
+<<<<<<< HEAD
 	          		gen.setList(test, from2, sender);
+=======
+	            		gen.setList(test, from2, sender);
+>>>>>>> develop
 						if (isDeleteMail() == true) {
 							System.out.println("Email wurde erfolgreich gelöscht");
 							message.setFlag(Flags.Flag.DELETED, true);
@@ -113,7 +123,11 @@ public class EmailIMAP implements EmailInterface {
     // ->		
             	htmlCode =  message.getContent().toString();
         		String test = htmlCode.toString();
+<<<<<<< HEAD
         	    		gen.setList(test, from2, sender);
+=======
+        		gen.setList(test, from2, sender);
+>>>>>>> develop
         		if (isDeleteMail() == true) {
         			System.out.println("Email wurde erfolgreich gelöscht");
         			message.setFlag(Flags.Flag.DELETED, true);
@@ -129,7 +143,12 @@ public class EmailIMAP implements EmailInterface {
 
 		}
         
+<<<<<<< HEAD
         System.out.println("                  Fertig ");
+=======
+        System.out.println("                  Fertig mit auslesen. Jetzt wird ge�ffnet Bitch");
+        gen.open();
+>>>>>>> develop
 		} catch (NoSuchProviderException e) {
 		e.printStackTrace();
 		System.exit(1);
@@ -139,7 +158,11 @@ public class EmailIMAP implements EmailInterface {
 
 
 	public static boolean isDeleteMail() {
+<<<<<<< HEAD
 		System.out.println(deleteMail);
+=======
+		System.out.println("Delete state: " + deleteMail);
+>>>>>>> develop
 		return deleteMail;
 	}
 
@@ -153,7 +176,10 @@ public class EmailIMAP implements EmailInterface {
 
 	public static void setDeleteMail(boolean stat) {
 		deleteMail = stat;
+<<<<<<< HEAD
 		System.out.println(deleteMail);
+=======
+>>>>>>> develop
 	}
 
 	@Override
@@ -168,7 +194,11 @@ public class EmailIMAP implements EmailInterface {
 			store = session.getStore("imaps");
 		
 		store.connect( host, user, password);
+<<<<<<< HEAD
 		System.out.println("Erfolgreich eingelogt");
+=======
+		System.out.println("Erfolgreich eingeloggt");
+>>>>>>> develop
 
 
 	//choose the folder
